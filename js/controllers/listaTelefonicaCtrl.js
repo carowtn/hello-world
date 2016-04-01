@@ -2,9 +2,6 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
 	$scope.app = "Lista Telefonica";
 	$scope.contatos = [];
 	$scope.operadoras = [];
-	$scope.contato = {
-		data: 1034218800000
-	};
 
 	var carregarContatos = function () {
 		contatosAPI.getContatos().success(function (data) {
@@ -45,7 +42,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($s
 		$scope.criterioDeOrdenacao = campo;
 		$scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
 	};
-
+	
 	carregarContatos();
 	carregarOperadoras();
 });
